@@ -6,8 +6,8 @@ import { WebClient } from '@slack/web-api';
 export class MessageService {
   public async sendMessage(sendRequest: MessageDto): Promise<any> {
     const token = process.env.SLACK_BOT_TOKEN;
+    const channelID = process.env.SLACK_CHANNEL;
     const slackClient = new WebClient(token);
-    const channelID = 'C02FU0RPDLN';
     const message = {
       channel: channelID,
       blocks: [
